@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     lineHeight: 45,
     color: "#fff",
-    textAlign: "center"
+    textAlign: "center",
   },
   containerInput: {
     backgroundColor: "#67686d",
@@ -22,10 +22,19 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: "center",
     justifyContent: "space-between",
-    flexDirection: "row"
+    flexDirection: "row",
+    gap: 10,
   },
-  input:{
-    color: '#fff',
-    width: "80%"
-  }
+  input: {
+    color: "#fff",
+    width: "80%",
+  },
+  picker: {
+    width: "100%",
+    backgroundColor: "#67686d",
+    borderRadius: 16,
+    height: 50,
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
 });
