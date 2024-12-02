@@ -43,5 +43,41 @@ export const styles = StyleSheet.create({
   },
   textAvaliacao:{
     color: "#FFD700"
-  }
+  },
+  titleMovie:{
+    width: "50%",
+    left: 135,
+    top: 60,
+    color:"#ffffff",
+    fontSize: 18,
+    fontWeight: "700"
+  },
+  infosMovie: {
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 140,
+    width: "100%",
+    flexDirection: "row",
+    gap: 14,
+  },
+  infoText: {
+    fontSize: 16,
+    fontWeight: "200",
+    color: "#d3d3d3",
+  },
+  separator: {
+    fontSize: 14,
+    color: "#d3d3d3", 
+  },
+  infoAdicionais: {
+    marginTop: 50,
+    justifyContent: 'center', // Alinha verticalmente no centro
+    alignItems: 'center', // Alinha horizontalmente no centro
+  },
+  headerInfoAdicionais: {
+    flexDirection: 'row',
+    justifyContent: 'space-between', // Espaço entre os itens
+    alignItems: 'center', // Alinha os itens verticalmente no centro
+    width: '80%', // Ou qualquer largura desejada
+  },
 });

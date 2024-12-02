@@ -62,7 +62,7 @@ export function Home() {
     if (response.data.results.length === 0) {
       setNoResult(true);
     } else {
-      setSearchResultMovies([]);
+      setSearchResultMovies(response.data.results);
     }
     setLoading(false);
   };
