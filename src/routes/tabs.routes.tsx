@@ -1,12 +1,24 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack"; 
+import { MaterialCommunityIcons } from "react-native-vector-icons"; 
 import { Home } from "../screens/Home";
-import { MaterialCommunityIcons } from "react-native-vector-icons"; // Exemplo de ícones
 import { Details } from "../screens/Details";
 import { MyList } from "../screens/MyList";
 import { Search } from "../screens/Search";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
+function AppStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="TabRoutes" component={TabRoutes} />
+      <Stack.Screen name="Detalhes" component={Details} />
+    </Stack.Navigator>
+  );
+}
+
+// Definindo as rotas de Tab
 export function TabRoutes() {
   return (
     <Tab.Navigator
@@ -20,7 +32,7 @@ export function TabRoutes() {
         },
         tabBarActiveTintColor: "#0296e5",
         tabBarInactiveTintColor: "#ffffff",
-        headerShown: false, 
+        headerShown: false,
       }}
     >
       <Tab.Screen 
@@ -30,14 +42,7 @@ export function TabRoutes() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
-        }}
-      />
-      <Tab.Screen 
-        name="Detalhes" 
-        component={Details} 
-        options={{
-          tabBarButton: () => null,
-        }}
+        }} 
       />
       <Tab.Screen 
         name="Minha Lista" 
@@ -60,3 +65,5 @@ export function TabRoutes() {
     </Tab.Navigator>
   );
 }
+
+export { AppStack };

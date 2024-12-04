@@ -2,6 +2,16 @@
   "expo": {
     "name": "movies",
     "slug": "movies",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "20dc3c33-6b7b-4497-9420-7a711e4c8337"
+      }
+    },
+    "splash": {
+      "image": "./src/Assets/splash.png",
+      "resizeMode": "contain",       
+       "backgroundColor": "#1e1e1e"
+    }
   }
 }

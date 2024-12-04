@@ -13,22 +13,6 @@ export const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "center",
   },
-  containerInput: {
-    backgroundColor: "#67686d",
-    paddingBlock: 3,
-    paddingInline: 15,
-    borderRadius: 16,
-    marginTop: 24,
-    marginBottom: 20,
-    alignItems: "center",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    gap: 10,
-  },
-  input: {
-    color: "#fff",
-    width: "80%",
-  },
   picker: {
     width: "100%",
     backgroundColor: "#67686d",

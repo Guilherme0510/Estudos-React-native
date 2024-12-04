@@ -18,6 +18,7 @@ interface Movie {
   title: string;
   poster_path: string;
   overview: string;
+  popularity: number;
 }
 
 export function Home() {
@@ -27,26 +28,32 @@ export function Home() {
   const [loading, setLoading] = useState(false);
   const [noResult, setNoResult] = useState(false);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState<"maisPopular" | "menosPopular" | "">("");
 
   const loadMoreData = async () => {
     setLoading(true);
 
-    let endpoint = "/movie/popular";
-    if (filter === "menosPopular") {
-      endpoint = "/movie/top_rated";
-    }
+    const endpoint = "/movie/popular"; // Use o endpoint padrão para popular
 
-    const response = await api.get(endpoint, {
-      params: {
-        page,
-      },
+    const response = await api.get<{ results: Movie[] }>(endpoint, {
+      params: { page },
     });
 
-    setDiscoveryMovies([...discoveryMovies, ...response.data.results]);
-    setPage(page + 1);
+    let movies = response.data.results;
+
+    // Aplicar o filtro
+    if (filter === "menosPopular") {
+      movies = movies.sort((a, b) => a.popularity - b.popularity); // Crescente
+    } else if (filter === "maisPopular") {
+      movies = movies.sort((a, b) => b.popularity - a.popularity); // Decrescente
+    }
+
+    setDiscoveryMovies((prev) => [...prev, ...movies]);
+    setPage((prev) => prev + 1);
     setLoading(false);
   };
+  
+  
 
   const searchMovies = async (query: string) => {
     setLoading(true);
@@ -82,7 +89,8 @@ export function Home() {
   const renderMovieItem = ({item} : {item: Movie}) => (
     <CardMovies 
       data={item}
-      onPress={() => navigation.navigate("Detalhes", {movieId: item.id})}
+      onPress={() => navigation.navigate('Detalhes', { movieId: item.id })}
+
     />
   )
 
@@ -97,7 +105,7 @@ export function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Oque você quer assistir hoje?</Text>
-      <View style={styles.containerInput}>
+      {/* <View style={styles.containerInput}>
         <TextInput
           placeholder="Buscar"
           style={styles.input}
@@ -105,13 +113,13 @@ export function Home() {
           value={search}
         />
         <MagnifyingGlass color="#fff" size={25} weight="light"  />
-      </View>
+      </View> */}
       <View style={styles.picker}>
         <Picker
           selectedValue={filter}
           onValueChange={(itemValue) => setFilter(itemValue)}
         >
-          <Picker.Item label="Filtro" value="" />
+          <Picker.Item label="Todos os Filmes" value="" />
           <Picker.Item label="Mais Popular" value="maisPopular" />
           <Picker.Item label="Menos Popular" value="menosPopular" />
         </Picker>

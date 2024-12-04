@@ -15,22 +15,22 @@ export const styles = StyleSheet.create({
   headerText: {
     color: "#fff",
     fontWeight: "700",
-    fontSize: 18
+    fontSize: 18,
   },
-  detailsPosterImage:{
+  detailsPosterImage: {
     width: 100,
     height: 160,
     borderRadius: 16,
     left: 29,
     right: 251,
-    top: 140
+    top: 140,
   },
-  detailsImage:{
+  detailsImage: {
     position: "absolute",
     width: "100%",
-    height: 210
+    height: 210,
   },
-  avaliacao:{
+  avaliacao: {
     position: "absolute",
     zIndex: 2,
     top: 170,
@@ -39,18 +39,18 @@ export const styles = StyleSheet.create({
     backgroundColor: "#3e3e3e80",
     borderRadius: 10,
     flexDirection: "row",
-    gap: 5
+    gap: 5,
   },
-  textAvaliacao:{
-    color: "#FFD700"
+  textAvaliacao: {
+    color: "#FFD700",
   },
-  titleMovie:{
+  titleMovie: {
     width: "50%",
     left: 135,
     top: 60,
-    color:"#ffffff",
+    color: "#ffffff",
     fontSize: 18,
-    fontWeight: "700"
+    fontWeight: "700",
   },
   infosMovie: {
     justifyContent: "center",
@@ -62,22 +62,97 @@ export const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 16,
-    fontWeight: "200",
-    color: "#d3d3d3",
+    fontWeight: "300",
+    color: "#9A9A9A",
   },
   separator: {
     fontSize: 14,
-    color: "#d3d3d3", 
+    color: "#d3d3d3",
   },
   infoAdicionais: {
     marginTop: 50,
-    justifyContent: 'center', // Alinha verticalmente no centro
-    alignItems: 'center', // Alinha horizontalmente no centro
+    justifyContent: "center",
+    alignItems: "center",
   },
   headerInfoAdicionais: {
-    flexDirection: 'row',
-    justifyContent: 'space-between', // Espaço entre os itens
-    alignItems: 'center', // Alinha os itens verticalmente no centro
-    width: '80%', // Ou qualquer largura desejada
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 25,
+    width: "80%",
   },
+  textInfoAdicionais: {
+    color: "#FFF",
+    fontSize: 17,
+    fontWeight: "400",
+    marginBottom: 10,
+  },
+  activeSection: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#9a9a9a",
+    borderRadius: 10
+  },
+
+  containerDescricao: {
+    paddingTop: 20,
+    width: "80%",
+  },
+  descricao: {
+    color: "#fff",
+    lineHeight: 17,
+    fontSize: 14,
+    fontWeight: "300",
+  },
+  reviews: {
+    paddingTop: 20,
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    width: "65%",
+    gap: 20,
+  },
+  reviewRating: {
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 7,
+  },
+  reviewRatingImage: {
+    width: 50,
+    height: 50,
+  },
+  reviewRatingNota: {
+    color: "#0296E5",
+  },
+  reviewInfo: {
+    gap: 3,
+  },
+  reviewInfoTextHeader: {
+    fontSize: 16,
+    color: "#fff",
+    fontWeight: "400",
+  },
+  reviewInfoText: {
+    color: "#fff",
+    fontWeight: "300",
+  },
+  missingRating:{
+    color: "red",
+    paddingTop: 20
+  },
+  cast: {
+    alignItems: "center",
+    marginInline: 30,
+    marginBlock: 10
+  },
+  castImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+    margin: 5,
+  },
+  castName:{
+    color:"#FFF",
+    textAlign:"center"
+  }
+  
 });
